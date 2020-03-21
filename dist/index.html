@@ -13,8 +13,10 @@
     }
     p {
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       text-align: center;
+      letter-spacing: .12rem;
+      font-weight: 100;
     }
     img {
       width: 50%;
@@ -23,14 +25,11 @@
     }
     .container {
       width: 95%;
-      margin: 80px auto;
+      margin: 50px auto;
       background: #f6d186;
     }
-    .row {
-      display: flex;
-    }
     h1 {
-      font-size: 4rem;
+      font-size: 1.5rem;
       text-align: center;
       color: #fff;
     }
@@ -38,10 +37,7 @@
       background: #d63447;
       border-radius: 100rem;
       padding: 2px;
-      margin: 50px 25px;
-    }
-    .play {
-      padding: 10px;
+      margin: 10px 25px;
     }
     .share {
       position: fixed;
@@ -50,6 +46,23 @@
       right: 0;
       background: #4caf50;
       width: 100%
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .column {
+      flex: 50%;
+      max-width: 50%;
+      padding: 1px;
+      box-sizing: border-box;
+    }
+
+    .column img {
+      vertical-align: middle;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2px;
     }
   </style>
 </head>
@@ -60,12 +73,14 @@
     
     <div class="container">
       <div class="row">
-        <img src="shankh.png" class="play" id="shankh"/>
-        <img src="ghanta.png" class="play" id="ghanta"/>
-      </div>
-      <div class="row">
-        <img src="manjeera.png" class="play" id="manjeera"/>
-        <img src="clap.png" class="play" id="clap"/>
+        <div class="column">
+          <img src="shankh.png" class="play" id="shankh"/>
+          <img src="ghanta.png" class="play" id="ghanta"/>
+        </div>
+        <div class="column">
+          <img src="manjeera.png" class="play" id="manjeera"/>
+          <img src="clap.png" class="play" id="clap"/>
+        </div>
       </div>
     </div>
 
