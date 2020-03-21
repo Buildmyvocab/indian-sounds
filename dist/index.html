@@ -1,12 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Indian Instruments For Janta Curfew</title>
+
+  <style type="text/css">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f57b51;
+    }
+    p {
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    img {
+      width: 50%;
+      max-width: 100%; 
+      height: auto;
+    }
+    .container {
+      width: 95%;
+      margin: 80px auto;
+      background: #f6d186;
+    }
+    .row {
+      display: flex;
+    }
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+      color: #fff;
+    }
+    .btn {
+      background: #d63447;
+      border-radius: 100rem;
+      padding: 2px;
+      margin: 50px 25px;
+    }
+    .play {
+      padding: 10px;
+    }
+    .share {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #4caf50;
+      width: 100%
+    }
+  </style>
+</head>
 <body>
-    <h1>Indian Sounds</h1>
-	<div>
-		<audio id="audio" src="http://www.sousound.com/music/healing/healing_01.mp3" preload="auto"  ></audio>
-    <button class="play" id="shankh">Shankh</button>
-    <button class="play" id="ghanta">Ghanta</button>
-    <button class="play" id="manjeera">Manjeera</button>
-		<button class="play" id="clap">Clap</button>
-	</div>
+    <div class="btn">
+      <h1>Tap To Play</h1>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <img src="shankh.png" class="play" id="shankh"/>
+        <img src="ghanta.png" class="play" id="ghanta"/>
+      </div>
+      <div class="row">
+        <img src="manjeera.png" class="play" id="manjeera"/>
+        <img src="clap.png" class="play" id="clap"/>
+      </div>
+    </div>
+
+    <p>Express gratitude to those working to keep the country going, such as doctors, nurses, paramedics, municipal staff and airport workers by going out in balconies at <strong><u>5 pm on March 22</u></strong> and playing these sounds
+    </p>
+
+    <div id="share" class="share"><h1>SHARE</h1></div>
 <div class="preload" style="display:none">
 <audio controls preload="auto">
   <source src="https://indian-sounds.s3.ap-south-1.amazonaws.com/shankh.wav" type="audio/wav">
@@ -35,4 +98,20 @@
   playBtns.forEach(function(playBtn) {
     playBtn.addEventListener('click', playSound, false);
   });
+  var shareButton = document.getElementById('share');
+    if (navigator.share) {
+      shareButton.addEventListener('click', event => {
+          navigator.share({
+            title: 'Janta Curfew: Express gratitude with these sounds',
+            url: window.location.href
+          }).then(() => {
+            console.log('Thanks for sharing!');
+          })
+          .catch(console.error);
+        
+      });
+    } else {
+      shareButton.style.display = 'none';
+    }
 </script>
+</html>
