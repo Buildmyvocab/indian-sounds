@@ -1,0 +1,38 @@
+<body>
+    <h1>Indian Sounds</h1>
+	<div>
+		<audio id="audio" src="http://www.sousound.com/music/healing/healing_01.mp3" preload="auto"  ></audio>
+    <button class="play" id="shankh">Shankh</button>
+    <button class="play" id="ghanta">Ghanta</button>
+    <button class="play" id="manjeera">Manjeera</button>
+		<button class="play" id="clap">Clap</button>
+	</div>
+<div class="preload" style="display:none">
+<audio controls preload="auto">
+  <source src="https://indian-sounds.s3.ap-south-1.amazonaws.com/shankh.wav" type="audio/wav">
+</audio>
+<audio controls preload="auto">
+  <source src="https://indian-sounds.s3.ap-south-1.amazonaws.com/ghanta.wav" type="audio/wav">
+</audio>
+<audio controls preload="auto">
+  <source src="https://indian-sounds.s3.ap-south-1.amazonaws.com/manjeera.wav" type="audio/wav">
+</audio>
+<audio controls preload="auto">
+  <source src="https://indian-sounds.s3.ap-south-1.amazonaws.com/clap.wav" type="audio/wav">
+</audio>
+</div>
+</body>
+<script type="text/javascript">
+  var playBtns = document.querySelectorAll('.play');
+
+  var playSound = function(event) {
+    var file = event.target.id;
+    // Create your audio and clone
+    var myAudio = new Audio('https://indian-sounds.s3.ap-south-1.amazonaws.com/' + file + '.wav');
+
+    myAudio.play();
+  };
+  playBtns.forEach(function(playBtn) {
+    playBtn.addEventListener('click', playSound, false);
+  });
+</script>
