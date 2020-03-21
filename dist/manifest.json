@@ -1,0 +1,25 @@
+{
+  "short_name": "Indian Instruments",
+  "name": "Indian Instruments Sounds",
+  "theme_color": "#f57b51",
+  "background_color": "#fff",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "ic-small.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "ic-large.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "ic-xlarge.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/"
+}
